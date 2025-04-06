@@ -153,8 +153,9 @@
 
     <div class="contact">
       <h2>📬 Kontakt</h2>
-      <p>Email: serockikonrad@gmail.com</p>
-      <p>LinkedIn: <a href="https://www.linkedin.com/in/konrad-serocki-132b66321/" target="_blank">konradserocki</a></p>
+      <p>📧 Email: <a href="mailto:serockikonrad@gmail.com">serockikonrad@gmail.com</a></p>
+      <p>💼 LinkedIn: <a href="https://www.linkedin.com/in/konrad-serocki-132b66321/" target="_blank">konradserocki</a></p>
+
     </div>
 
   </div>
@@ -163,6 +164,17 @@
     &copy; 2025 Konrad Serocki
   </footer>
 
+<script>
+  window.addEventListener('load', () => {
+    document.querySelectorAll('.skill-level').forEach(el => {
+      const width = el.style.width;
+      el.style.width = '0';
+      setTimeout(() => {
+        el.style.width = width;
+      }, 100);
+    });
+  });
+</script>
 
 
 </body>
