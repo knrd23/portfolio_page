@@ -1,11 +1,126 @@
 <!DOCTYPE html>
 <html lang="pl">
 <head>
-  <meta charset="UTF-8">
-  <title>Moja strona</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Portfolio Data Science - Jan Kowalski</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f4f4f4;
+      color: #333;
+    }
+
+    header {
+      background: #2c3e50;
+      color: white;
+      padding: 2rem 1rem;
+      text-align: center;
+    }
+
+    header h1 {
+      margin-bottom: 0.5rem;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+    }
+
+    .project {
+      background: white;
+      border-radius: 10px;
+      padding: 1.5rem;
+      margin-bottom: 1.5rem;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+
+    .project h2 {
+      margin-top: 0;
+    }
+
+    .project a {
+      color: #3498db;
+      text-decoration: none;
+    }
+
+    .skills, .contact {
+      background: white;
+      padding: 1.5rem;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      margin-bottom: 1.5rem;
+    }
+
+    ul {
+      padding-left: 1.2rem;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1rem;
+      font-size: 0.9rem;
+      color: #777;
+    }
+  </style>
 </head>
 <body>
-  <h1>Witaj na mojej stronie!</h1>
-  <p>To jest moja pierwsza strona na GitHub Pages.</p>
+
+  <header>
+    <h1>Jan Kowalski</h1>
+    <p>Data Science Portfolio</p>
+  </header>
+
+  <div class="container">
+
+    <div class="project">
+      <h2>🧠 Predykcja cen mieszkań</h2>
+      <p>Model regresyjny przewidujący ceny mieszkań w Warszawie na podstawie danych z Otodom.</p>
+      <p><strong>Technologie:</strong> Python, scikit-learn, pandas, matplotlib</p>
+      <a href="https://github.com/twoj-login/predykcja-cen-mieszkan" target="_blank">Zobacz repozytorium</a>
+    </div>
+
+    <div class="project">
+      <h2>📈 Analiza danych z COVID-19</h2>
+      <p>Eksploracyjna analiza danych o zachorowaniach i zgonach na COVID-19 w Europie.</p>
+      <p><strong>Technologie:</strong> Python, pandas, seaborn, plotly</p>
+      <a href="https://github.com/twoj-login/analiza-covid" target="_blank">Zobacz repozytorium</a>
+    </div>
+
+    <div class="project">
+      <h2>🎮 Klasyfikacja gatunków gier</h2>
+      <p>Model klasyfikujący gatunki gier na podstawie opisów z serwisu Steam.</p>
+      <p><strong>Technologie:</strong> NLP, sklearn, TF-IDF, Python</p>
+      <a href="https://github.com/twoj-login/klasyfikacja-gier" target="_blank">Zobacz repozytorium</a>
+    </div>
+
+    <div class="skills">
+      <h2>📚 Umiejętności</h2>
+      <ul>
+        <li>Analiza danych (pandas, NumPy)</li>
+        <li>Wizualizacja (Matplotlib, Seaborn, Plotly)</li>
+        <li>Uczenie maszynowe (scikit-learn)</li>
+        <li>Przetwarzanie języka naturalnego (NLP)</li>
+        <li>Jupyter Notebook</li>
+        <li>Git, GitHub</li>
+      </ul>
+    </div>
+
+    <div class="contact">
+      <h2>📬 Kontakt</h2>
+      <p>Email: jan.kowalski@example.com</p>
+      <p>LinkedIn: <a href="https://linkedin.com/in/jankowalski" target="_blank">jankowalski</a></p>
+      <p>Blog: <a href="https://moj-blog-datascience.pl" target="_blank">moj-blog-datascience.pl</a></p>
+    </div>
+
+  </div>
+
+  <footer>
+    &copy; 2025 Jan Kowalski
+  </footer>
+
 </body>
 </html>
