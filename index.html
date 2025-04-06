@@ -5,24 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Portfolio Data Science - Konrad Serocki</title>
   <style>
-      .skill {
-  margin-bottom: 1rem;
-}
-
-.skill-bar {
-  background: #ddd;
-  border-radius: 20px;
-  overflow: hidden;
-  height: 15px;
-}
-
-.skill-level {
-  height: 100%;
-  background: #3498db;
-  width: 0;
-  border-radius: 20px;
-  transition: width 1s ease-in-out;
-}
     body {
       font-family: Arial, sans-serif;
       margin: 0;
@@ -48,7 +30,7 @@
       padding: 0 1rem;
     }
 
-    .project {
+    .project, .skills, .contact, .about {
       background: white;
       border-radius: 10px;
       padding: 1.5rem;
@@ -56,7 +38,7 @@
       box-shadow: 0 2px 8px rgba(0,0,0,0.1);
     }
 
-    .project h2 {
+    .project h2, .skills h2, .contact h2, .about h2 {
       margin-top: 0;
     }
 
@@ -65,23 +47,48 @@
       text-decoration: none;
     }
 
-    .skills, .contact {
-      background: white;
-      padding: 1.5rem;
-      border-radius: 10px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-      margin-bottom: 1.5rem;
-    }
-
-    ul {
-      padding-left: 1.2rem;
-    }
-
     footer {
       text-align: center;
       padding: 1rem;
       font-size: 0.9rem;
       color: #777;
+    }
+
+    /* Pasek umiejętności */
+    .skill {
+      margin-bottom: 1rem;
+    }
+
+    .skill-bar {
+      background: #ddd;
+      border-radius: 20px;
+      overflow: hidden;
+      height: 15px;
+    }
+
+    .skill-level {
+      height: 100%;
+      border-radius: 20px;
+      transition: width 1s ease-in-out;
+    }
+
+    .high { background: #2ecc71; }
+    .medium { background: #f39c12; }
+    .low { background: #e74c3c; }
+
+    /* Responsywność */
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 1.5rem;
+      }
+
+      .container {
+        padding: 0 0.5rem;
+      }
+
+      .project, .skills, .contact, .about {
+        padding: 1rem;
+      }
     }
   </style>
 </head>
@@ -94,68 +101,56 @@
 
   <div class="container">
 
+    <div class="about">
+      <h2>👨‍💻 O mnie</h2>
+      <p>Jestem pasjonatem analizy danych z doświadczeniem w Pythonie, R i narzędziach BI. Interesuje mnie rola danych w rozwiązywaniu realnych problemów oraz tworzenie wizualizacji, które mówią więcej niż tysiąc słów.</p>
+    </div>
+
     <div class="project">
-      <h2>📊 Wizualizacja danych </h2>
-      <p>Tworzenie wykresów i innych wizualizacji związanych z tematem rolnictwa. </p>
+      <h2>📊 Wizualizacja danych</h2>
+      <p>Tworzenie wykresów i innych wizualizacji związanych z tematem rolnictwa.</p>
       <p><strong>Technologie:</strong> Python, pandas, geopandas, numpy, matplotlib, seaborn, plotly</p>
       <a href="https://github.com/knrd23/portfolio/tree/data-visualization" target="_blank">Zobacz repozytorium</a>
     </div>
-<!--
-    <div class="project">
-      <h2>📈 Analiza danych z COVID-19</h2>
-      <p>Eksploracyjna analiza danych o zachorowaniach i zgonach na COVID-19 w Europie.</p>
-      <p><strong>Technologie:</strong> Python, pandas, seaborn, plotly</p>
-      <a href="https://github.com/twoj-login/analiza-covid" target="_blank">Zobacz repozytorium</a>
+
+    <div class="skills">
+      <h2>📚 Umiejętności</h2>
+
+      <div class="skill">
+        <p>Analiza danych (pandas, NumPy)</p>
+        <div class="skill-bar"><div class="skill-level high" style="width: 85%;"></div></div>
+      </div>
+
+      <div class="skill">
+        <p>Analiza danych (R)</p>
+        <div class="skill-bar"><div class="skill-level medium" style="width: 70%;"></div></div>
+      </div>
+
+      <div class="skill">
+        <p>Wizualizacja (Matplotlib, Seaborn, Plotly)</p>
+        <div class="skill-bar"><div class="skill-level high" style="width: 80%;"></div></div>
+      </div>
+
+      <div class="skill">
+        <p>Microsoft Excel</p>
+        <div class="skill-bar"><div class="skill-level medium" style="width: 75%;"></div></div>
+      </div>
+
+      <div class="skill">
+        <p>PowerBI</p>
+        <div class="skill-bar"><div class="skill-level medium" style="width: 50%;"></div></div>
+      </div>
+
+      <div class="skill">
+        <p>PostgreSQL</p>
+        <div class="skill-bar"><div class="skill-level medium" style="width: 75%;"></div></div>
+      </div>
     </div>
-
-    <div class="project">
-      <h2>🎮 Klasyfikacja gatunków gier</h2>
-      <p>Model klasyfikujący gatunki gier na podstawie opisów z serwisu Steam.</p>
-      <p><strong>Technologie:</strong> NLP, sklearn, TF-IDF, Python</p>
-      <a href="https://github.com/twoj-login/klasyfikacja-gier" target="_blank">Zobacz repozytorium</a>
-    </div>
--->
-<div class="skills">
-  <h2>📚 Umiejętności</h2>
-
-  <div class="skill">
-    <p>Analiza danych (pandas, NumPy)</p>
-    <div class="skill-bar"><div class="skill-level" style="width: 85%;"></div></div>
-  </div>
-
-  <div class="skill">
-    <p>Analiza danych (R)</p>
-    <div class="skill-bar"><div class="skill-level" style="width: 70%;"></div></div>
-  </div>
-
-  <div class="skill">
-    <p>Wizualizacja (Matplotlib, Seaborn, Plotly)</p>
-    <div class="skill-bar"><div class="skill-level" style="width: 80%;"></div></div>
-  </div>
-
-  <div class="skill">
-    <p>Microsoft Excel</p>
-    <div class="skill-bar"><div class="skill-level" style="width: 75%;"></div></div>
-  </div>
-
-  <div class="skill">
-    <p>PowerBI</p>
-    <div class="skill-bar"><div class="skill-level" style="width: 50%;"></div></div>
-  </div>
-
-
-  <div class="skill">
-    <p>PostgreSQL</p>
-    <div class="skill-bar"><div class="skill-level" style="width: 75%;"></div></div>
-  </div>
-</div>
-
 
     <div class="contact">
       <h2>📬 Kontakt</h2>
       <p>📧 Email: <a href="mailto:serockikonrad@gmail.com">serockikonrad@gmail.com</a></p>
       <p>💼 LinkedIn: <a href="https://www.linkedin.com/in/konrad-serocki-132b66321/" target="_blank">konradserocki</a></p>
-
     </div>
 
   </div>
@@ -164,18 +159,18 @@
     &copy; 2025 Konrad Serocki
   </footer>
 
-<script>
-  window.addEventListener('load', () => {
-    document.querySelectorAll('.skill-level').forEach(el => {
-      const width = el.style.width;
-      el.style.width = '0';
-      setTimeout(() => {
-        el.style.width = width;
-      }, 100);
+  <!-- Animacja pasków -->
+  <script>
+    window.addEventListener('load', () => {
+      document.querySelectorAll('.skill-level').forEach(el => {
+        const width = el.style.width;
+        el.style.width = '0';
+        setTimeout(() => {
+          el.style.width = width;
+        }, 100);
+      });
     });
-  });
-</script>
-
+  </script>
 
 </body>
 </html>
