@@ -1,213 +1,263 @@
 <!DOCTYPE html>
 <html lang="pl">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Portfolio Data Science - Konrad Serocki</title>
-  <style>
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      margin: 0;
-      padding: 0;
-      background: #f8f9fa;
-      color: #333;
-      line-height: 1.6;
-    }
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfolio Data Science - Konrad Serocki</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #4a90e2;
+            --secondary-color: #2c3e50;
+            --background-color: #fcfcfc;
+            --card-background: #ffffff;
+            --text-color: #333333;
+            --light-gray: #e0e0e0;
+            --shadow-color: rgba(0, 0, 0, 0.06);
+        }
 
-    header {
-      background: #34495e;
-      color: white;
-      padding: 2rem 1rem;
-      text-align: center;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    }
+        * {
+            box-sizing: border-box;
+        }
 
-    header h1 {
-      margin: 0 0 0.5rem 0;
-      font-size: 2.5rem;
-    }
+        body {
+            font-family: 'Lato', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--background-color);
+            color: var(--text-color);
+            line-height: 1.7;
+        }
 
-    .container {
-      max-width: 960px;
-      margin: 2rem auto;
-      padding: 0 1rem;
-    }
+        header {
+            background: linear-gradient(45deg, var(--secondary-color), #34495e);
+            color: white;
+            padding: 3rem 1.5rem;
+            text-align: center;
+        }
 
-    .project, .skills, .contact, .about {
-      background: white;
-      border-radius: 12px;
-      padding: 2rem;
-      margin-bottom: 2rem;
-      box-shadow: 0 3px 12px rgba(0,0,0,0.07);
-      transition: transform 0.2s ease-in-out;
-    }
+        header h1 {
+            margin: 0;
+            font-size: 2.8rem;
+            font-weight: 700;
+        }
+        
+        header p {
+            margin: 0.5rem 0 0;
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
 
-    .project:hover, .skills:hover, .contact:hover, .about:hover {
-      transform: translateY(-4px);
-    }
+        .container {
+            max-width: 960px;
+            margin: 2.5rem auto;
+            padding: 0 1.5rem;
+        }
 
-    h2 {
-      margin-top: 0;
-      font-size: 1.6rem;
-      color: #2c3e50;
-    }
+        .card {
+            background-color: var(--card-background);
+            border-radius: 16px;
+            padding: 2.5rem;
+            margin-bottom: 2.5rem;
+            box-shadow: 0 4px 15px var(--shadow-color);
+            border: 1px solid var(--light-gray);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
 
-    .project a, .contact a {
-      color: #2980b9;
-      text-decoration: none;
-      font-weight: bold;
-    }
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+        }
 
-    .project a:hover, .contact a:hover {
-      text-decoration: underline;
-    }
+        h2 {
+            margin-top: 0;
+            font-size: 1.8rem;
+            color: var(--secondary-color);
+            display: flex;
+            align-items: center;
+            gap: 0.75rem; /* Odstęp między ikoną a tekstem */
+        }
 
-    footer {
-      text-align: center;
-      padding: 1rem;
-      font-size: 0.9rem;
-      color: #777;
-      background: #ecf0f1;
-    }
+        .card a {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.2s ease;
+        }
 
-    /* Pasek umiejętności */
-    .skill {
-      margin-bottom: 1.5rem;
-    }
+        .card a:hover {
+            color: #3498db;
+            text-decoration: underline;
+        }
+        
+        .project p strong {
+            color: var(--secondary-color);
+        }
 
-    .skill-bar {
-      background: #e0e0e0;
-      border-radius: 20px;
-      overflow: hidden;
-      height: 16px;
-      position: relative;
-    }
+        footer {
+            text-align: center;
+            padding: 2rem 1rem;
+            font-size: 0.9rem;
+            color: #888;
+            background-color: #f1f1f1;
+            margin-top: 2rem;
+        }
 
-    .skill-level {
-      height: 100%;
-      border-radius: 20px;
-      width: 0;
-      transition: width 1.5s ease-out;
-    }
+        /* Sekcja umiejętności */
+        .skills .skill {
+            margin-bottom: 1.5rem;
+        }
 
-    .high { background: #27ae60; }
-    .medium { background: #f39c12; }
-    .low { background: #e74c3c; }
+        .skills .skill p {
+            margin: 0 0 0.5rem 0;
+        }
 
-    /* Responsywność */
-    @media (max-width: 600px) {
-      header h1 {
-        font-size: 2rem;
-      }
+        .skill-bar {
+            background-color: #f0f0f0;
+            border-radius: 25px;
+            height: 20px;
+            overflow: hidden;
+            position: relative;
+        }
 
-      .container {
-        padding: 0 0.8rem;
-      }
+        .skill-level {
+            height: 100%;
+            border-radius: 25px;
+            width: 0;
+            background-color: var(--primary-color);
+            transition: width 1.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            color: white;
+            font-size: 0.8rem;
+            padding-right: 10px;
+        }
 
-      .project, .skills, .contact, .about {
-        padding: 1.2rem;
-      }
-    }
-  </style>
+        /* Responsywność */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2.2rem;
+            }
+            .card {
+                padding: 1.5rem;
+            }
+            .container {
+                padding: 0 1rem;
+            }
+        }
+    </style>
 </head>
 <body>
 
-  <header>
-    <h1>Konrad Serocki</h1>
-    <p>Data Science Portfolio</p>
-  </header>
+    <header>
+        <h1>Konrad Serocki</h1>
+        <p>Portfolio | Data Science</p>
+    </header>
 
-  <div class="container">
+    <div class="container">
 
-    <div class="about">
-      <h2>👨‍💻 O mnie</h2>
-      <p>Jestem studentem trzeciego roku kierunku modelowanie matematyczne i analiza danych na Uniwersytecie Gdańskim. Wiedza, umiejętności i narzędzia zdobyte w trakcie mojej edukacji pozwalają mi na ich praktyczne wykorzystanie. Interesuję
-      się wizualizacją danych, ich analizowaniem, wyciąganiem wniosków, tworzeniem predykcji, pracą z bazami danych. Mam nadzieję na wykorzystanie Pythona, R, narzędzi MS jak i BI oraz PostgreSQL w rozwiązywaniu rzeczywistych zadań.</p>
+        <div class="card about">
+            <h2>👨‍💻 O mnie</h2>
+            <p>Jestem studentem trzeciego roku kierunku modelowanie matematyczne i analiza danych na Uniwersytecie Gdańskim. Wiedza, umiejętności i narzędzia zdobyte w trakcie mojej edukacji pozwalają mi na ich praktyczne wykorzystanie. Interesuję się wizualizacją danych, ich analizowaniem, wyciąganiem wniosków, tworzeniem predykcji, pracą z bazami danych. Mam nadzieję na wykorzystanie Pythona, R, narzędzi MS jak i BI oraz PostgreSQL w rozwiązywaniu rzeczywistych zadań.</p>
+        </div>
+
+        <div class="card project">
+            <h2>📊 Wizualizacja danych</h2>
+            <p>Tworzenie wykresów i innych wizualizacji związanych z tematem rolnictwa.</p>
+            <p><strong>Technologie:</strong> Python, pandas, geopandas, numpy, matplotlib, seaborn, plotly</p>
+            <a href="https://github.com/knrd23/portfolio/tree/data-visualization" target="_blank" rel="noopener noreferrer">Zobacz repozytorium &rarr;</a>
+        </div>
+
+        <div class="card project">
+            <h2>📈 Certyfikat PowerBI</h2>
+            <p>Kurs podstawowy Santander Academy.</p>
+            <p><strong>Technologie:</strong> PowerBI, PowerQuery</p>
+            <a href="https://github.com/knrd23/portfolio/tree/PowerBI" target="_blank" rel="noopener noreferrer">Zobacz repozytorium &rarr;</a>
+        </div>
+
+        <div class="card project">
+            <h2>🇺🇸🇬🇧 Certyfikat językowy</h2>
+            <p>Certyfikat językowy Centrum Języków Obcych UG.</p>
+            <a href="https://github.com/knrd23/portfolio/tree/english-certificate" target="_blank" rel="noopener noreferrer">Zobacz repozytorium &rarr;</a>
+        </div>
+
+        <div class="card skills">
+            <h2>📚 Umiejętności</h2>
+
+            <div class="skill">
+                <p>Scrum, Waterfall, Kanban</p>
+                <div class="skill-bar"><div class="skill-level" style="width: 85%;">85%</div></div>
+            </div>
+
+            <div class="skill">
+                <p>Analiza danych (pandas, NumPy)</p>
+                <div class="skill-bar"><div class="skill-level" style="width: 85%;">85%</div></div>
+            </div>
+
+            <div class="skill">
+                <p>Analiza danych (R)</p>
+                <div class="skill-bar"><div class="skill-level" style="width: 70%;">70%</div></div>
+            </div>
+
+            <div class="skill">
+                <p>Wizualizacja (Matplotlib, Seaborn, Plotly)</p>
+                <div class="skill-bar"><div class="skill-level" style="width: 80%;">80%</div></div>
+            </div>
+
+            <div class="skill">
+                <p>Microsoft Excel</p>
+                <div class="skill-bar"><div class="skill-level" style="width: 75%;">75%</div></div>
+            </div>
+
+            <div class="skill">
+                <p>PowerBI</p>
+                <div class="skill-bar"><div class="skill-level" style="width: 50%;">50%</div></div>
+            </div>
+
+            <div class="skill">
+                <p>PostgreSQL</p>
+                <div class="skill-bar"><div class="skill-level" style="width: 75%;">75%</div></div>
+            </div>
+        </div>
+
+        <div class="card contact">
+            <h2>📬 Kontakt</h2>
+            <p>📧 Email: <a href="mailto:serockikonrad@gmail.com">serockikonrad@gmail.com</a></p>
+            <p>💼 LinkedIn: <a href="https://www.linkedin.com/in/konrad-serocki-132b66321/" target="_blank" rel="noopener noreferrer">konrad-serocki</a></p>
+        </div>
+
     </div>
 
-    <div class="project">
-      <h2>📊 Wizualizacja danych</h2>
-      <p>Tworzenie wykresów i innych wizualizacji związanych z tematem rolnictwa.</p>
-      <p><strong>Technologie:</strong> Python, pandas, geopandas, numpy, matplotlib, seaborn, plotly</p>
-      <a href="https://github.com/knrd23/portfolio/tree/data-visualization" target="_blank">Zobacz repozytorium</a>
-    </div>
+    <footer>
+        &copy; 2025 Konrad Serocki
+    </footer>
 
-    <div class="project">
-      <h2>📈 Certyfikat PowerBI</h2>
-      <p>Kurs podstawowy Santander Academy.</p>
-      <p><strong>Technologie:</strong> PowerBI, PowerQuery</p>
-      <a href="https://github.com/knrd23/portfolio/tree/PowerBI" target="_blank">Zobacz repozytorium</a>
-    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const skillLevels = document.querySelectorAll('.skill-level');
+            
+            const observer = new IntersectionObserver(entries => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const el = entry.target;
+                        const targetWidth = el.style.width;
+                        el.style.width = '0';
+                        setTimeout(() => {
+                            el.style.width = targetWidth;
+                        }, 200);
+                        observer.unobserve(el);
+                    }
+                });
+            }, { threshold: 0.5 }); // Uruchom animację, gdy element jest w 50% widoczny
 
-    <div class="project">
-      <h2>🇺🇸🇬🇧 Certyfikat językowy</h2>
-      <p>Certyfikat językowy Centrum Języków Obcych UG.</p>
-      <a href="https://github.com/knrd23/portfolio/tree/english-certificate" target="_blank">Zobacz repozytorium</a>
-    </div>
-
-    <div class="skills">
-      <h2>📚 Umiejętności</h2>
-
-      <div class="skill">
-        <p>Scrum, Waterfall, Kanban</p>
-        <div class="skill-bar"><div class="skill-level high" style="width: 85%;"></div></div>
-      </div>
-
-      <div class="skill">
-        <p>Analiza danych (pandas, NumPy)</p>
-        <div class="skill-bar"><div class="skill-level high" style="width: 85%;"></div></div>
-      </div>
-
-      <div class="skill">
-        <p>Analiza danych (R)</p>
-        <div class="skill-bar"><div class="skill-level medium" style="width: 70%;"></div></div>
-      </div>
-
-      <div class="skill">
-        <p>Wizualizacja (Matplotlib, Seaborn, Plotly)</p>
-        <div class="skill-bar"><div class="skill-level high" style="width: 80%;"></div></div>
-      </div>
-
-      <div class="skill">
-        <p>Microsoft Excel</p>
-        <div class="skill-bar"><div class="skill-level medium" style="width: 75%;"></div></div>
-      </div>
-
-      <div class="skill">
-        <p>PowerBI</p>
-        <div class="skill-bar"><div class="skill-level medium" style="width: 50%;"></div></div>
-      </div>
-
-      <div class="skill">
-        <p>PostgreSQL</p>
-        <div class="skill-bar"><div class="skill-level medium" style="width: 75%;"></div></div>
-      </div>
-    </div>
-
-    <div class="contact">
-      <h2>📬 Kontakt</h2>
-      <p>📧 Email: <a href="mailto:serockikonrad@gmail.com">serockikonrad@gmail.com</a></p>
-      <p>💼 LinkedIn: <a href="https://www.linkedin.com/in/konrad-serocki-132b66321/" target="_blank">konradserocki</a></p>
-    </div>
-
-  </div>
-
-  <footer>
-    &copy; 2025 Konrad Serocki
-  </footer>
-
-  <!-- Animacja pasków -->
-  <script>
-    window.addEventListener('load', () => {
-      document.querySelectorAll('.skill-level').forEach(el => {
-        const targetWidth = el.style.width;
-        el.style.width = '0';
-        setTimeout(() => {
-          el.style.width = targetWidth;
-        }, 200);
-      });
-    });
-  </script>
+            skillLevels.forEach(el => {
+                observer.observe(el);
+            });
+        });
+    </script>
 
 </body>
 </html>
