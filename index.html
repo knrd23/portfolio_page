@@ -6,45 +6,60 @@
   <title>Portfolio Data Science - Konrad Serocki</title>
   <style>
     body {
-      font-family: Arial, sans-serif;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       margin: 0;
       padding: 0;
-      background: #f4f4f4;
+      background: #f8f9fa;
       color: #333;
+      line-height: 1.6;
     }
 
     header {
-      background: #2c3e50;
+      background: #34495e;
       color: white;
       padding: 2rem 1rem;
       text-align: center;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     }
 
     header h1 {
-      margin-bottom: 0.5rem;
+      margin: 0 0 0.5rem 0;
+      font-size: 2.5rem;
     }
 
     .container {
-      max-width: 900px;
+      max-width: 960px;
       margin: 2rem auto;
       padding: 0 1rem;
     }
 
     .project, .skills, .contact, .about {
       background: white;
-      border-radius: 10px;
-      padding: 1.5rem;
-      margin-bottom: 1.5rem;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      border-radius: 12px;
+      padding: 2rem;
+      margin-bottom: 2rem;
+      box-shadow: 0 3px 12px rgba(0,0,0,0.07);
+      transition: transform 0.2s ease-in-out;
     }
 
-    .project h2, .skills h2, .contact h2, .about h2 {
+    .project:hover, .skills:hover, .contact:hover, .about:hover {
+      transform: translateY(-4px);
+    }
+
+    h2 {
       margin-top: 0;
+      font-size: 1.6rem;
+      color: #2c3e50;
     }
 
-    .project a {
-      color: #3498db;
+    .project a, .contact a {
+      color: #2980b9;
       text-decoration: none;
+      font-weight: bold;
+    }
+
+    .project a:hover, .contact a:hover {
+      text-decoration: underline;
     }
 
     footer {
@@ -52,18 +67,19 @@
       padding: 1rem;
       font-size: 0.9rem;
       color: #777;
+      background: #ecf0f1;
     }
 
     /* Pasek umiejętności */
     .skill {
-      margin-bottom: 1rem;
+      margin-bottom: 1.5rem;
     }
 
     .skill-bar {
-      background: #ddd;
+      background: #e0e0e0;
       border-radius: 20px;
       overflow: hidden;
-      height: 15px;
+      height: 16px;
       position: relative;
     }
 
@@ -71,25 +87,25 @@
       height: 100%;
       border-radius: 20px;
       width: 0;
-      transition: width 2s ease-out; /* Dłuższa animacja */
+      transition: width 1.5s ease-out;
     }
 
-    .high { background: #2ecc71; }
+    .high { background: #27ae60; }
     .medium { background: #f39c12; }
     .low { background: #e74c3c; }
 
     /* Responsywność */
     @media (max-width: 600px) {
       header h1 {
-        font-size: 1.5rem;
+        font-size: 2rem;
       }
 
       .container {
-        padding: 0 0.5rem;
+        padding: 0 0.8rem;
       }
 
       .project, .skills, .contact, .about {
-        padding: 1rem;
+        padding: 1.2rem;
       }
     }
   </style>
@@ -122,8 +138,8 @@
       <p><strong>Technologie:</strong> PowerBI, PowerQuery</p>
       <a href="https://github.com/knrd23/portfolio/tree/PowerBI" target="_blank">Zobacz repozytorium</a>
     </div>
-    
-        <div class="project">
+
+    <div class="project">
       <h2>🇺🇸🇬🇧 Certyfikat językowy</h2>
       <p>Certyfikat językowy Centrum Języków Obcych UG.</p>
       <a href="https://github.com/knrd23/portfolio/tree/english-certificate" target="_blank">Zobacz repozytorium</a>
@@ -184,11 +200,11 @@
   <script>
     window.addEventListener('load', () => {
       document.querySelectorAll('.skill-level').forEach(el => {
-        const width = el.style.width;
+        const targetWidth = el.style.width;
         el.style.width = '0';
         setTimeout(() => {
-          el.style.width = width;
-        }, 100);
+          el.style.width = targetWidth;
+        }, 200);
       });
     });
   </script>
