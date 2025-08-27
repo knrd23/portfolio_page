@@ -3,18 +3,19 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Portfolio Data Science - Konrad Serocki</title>
+    <title>Portfolio - Konrad Serocki</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
     <style>
         :root {
-            --background-color: #1a1a1a;
-            --text-color: #e0e0e0;
-            --header-text-color: #ffffff;
-            --accent-color: #00bfff; /* DeepSkyBlue - żywy akcent */
-            --secondary-text-color: #a0a0a0;
-            --section-bg-color: #242424;
+            --background-color: #f9f9f9;
+            --text-color: #1a1a1a;
+            --header-text-color: #000000;
+            --accent-color: #007acc; /* elegancki niebieski */
+            --secondary-text-color: #555;
+            --section-bg-color: #ffffff;
+            --card-bg-color: #ffffff;
         }
 
         * {
@@ -28,43 +29,41 @@
         }
 
         body {
-            font-family: 'Inter', sans-serif;
+            font-family: 'Roboto', sans-serif;
             background-color: var(--background-color);
             color: var(--text-color);
-            line-height: 1.8;
-            font-size: 1.1rem;
+            line-height: 1.7;
+            font-size: 1.05rem;
         }
 
         .container {
-            max-width: 800px;
+            max-width: 950px;
             margin: 4rem auto;
             padding: 0 1.5rem;
         }
 
         header {
             text-align: center;
-            padding: 5rem 1.5rem;
+            padding: 6rem 1.5rem;
+            background: linear-gradient(135deg, #e6f3ff, #f9f9f9);
+            border-bottom: 1px solid #ddd;
         }
 
         header h1 {
-            font-size: 4rem;
+            font-size: 3.2rem;
             font-weight: 900;
             color: var(--header-text-color);
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.75rem;
         }
 
         header p {
-            font-size: 1.5rem;
+            font-size: 1.3rem;
             color: var(--accent-color);
+            font-weight: 500;
         }
 
         section {
             padding: 3rem 0;
-            border-bottom: 1px solid #333;
-        }
-
-        section:last-of-type {
-            border-bottom: none;
         }
 
         h2 {
@@ -74,93 +73,124 @@
             margin-bottom: 2rem;
             display: inline-flex;
             align-items: center;
+            letter-spacing: 0.5px;
         }
-        
+
         h2::before {
             content: '';
             display: block;
-            width: 5px;
-            height: 30px;
+            width: 6px;
+            height: 28px;
             background-color: var(--accent-color);
             margin-right: 1rem;
+            border-radius: 3px;
         }
 
         a {
             color: var(--accent-color);
             text-decoration: none;
-            font-weight: bold;
-            transition: color 0.2s ease, filter 0.2s ease;
+            font-weight: 600;
+            transition: 0.3s ease;
         }
 
         a:hover {
-            color: #ffffff;
-            filter: brightness(1.2);
+            color: #000;
+            filter: brightness(1.1);
         }
-        
+
+        /* Projekty w kartach */
         .project {
-            margin-bottom: 2.5rem;
+            background-color: var(--card-bg-color);
+            padding: 1.5rem;
+            border-radius: 12px;
+            border: 1px solid #e0e0e0;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+            margin-bottom: 2rem;
+            transition: transform 0.25s ease, box-shadow 0.25s ease;
         }
-        
+
+        .project:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+        }
+
         .project h3 {
             font-size: 1.4rem;
             color: var(--header-text-color);
             margin-bottom: 0.5rem;
         }
-        
-        .project p {
-            margin-bottom: 1rem;
-        }
 
         .project .technologies {
             color: var(--secondary-text-color);
             font-style: italic;
+            margin-bottom: 1rem;
         }
 
-        /* Sekcja umiejętności */
+        .project a {
+            display: inline-block;
+            background-color: var(--accent-color);
+            color: #fff;
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            transition: 0.3s ease;
+        }
+
+        .project a:hover {
+            background-color: #005a99;
+            color: #fff;
+        }
+
+        /* Umiejętności */
         .skill {
             margin-bottom: 1.5rem;
         }
 
         .skill p {
-            margin-bottom: 0.75rem;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
         }
 
         .skill-bar {
-            background-color: var(--section-bg-color);
-            border-radius: 5px;
-            height: 8px;
+            background-color: #eaeaea;
+            border-radius: 10px;
+            height: 10px;
             overflow: hidden;
         }
 
         .skill-level {
             height: 100%;
             width: 0;
-            background-color: var(--accent-color);
-            border-radius: 5px;
+            background: linear-gradient(90deg, #007acc, #00aaff);
+            border-radius: 10px;
             transition: width 1.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
         }
 
+        /* Kontakt */
+        .contact p {
+            margin: 0.75rem 0;
+            font-size: 1.1rem;
+        }
+
+        /* Stopka */
         footer {
             text-align: center;
-            padding: 3rem 1rem;
+            padding: 2rem 1rem;
             font-size: 0.9rem;
             color: var(--secondary-text-color);
-            margin-top: 2rem;
+            border-top: 1px solid #ddd;
+            margin-top: 3rem;
         }
 
         /* Responsywność */
         @media (max-width: 768px) {
-            body {
-                font-size: 1rem;
-            }
             header h1 {
-                font-size: 2.5rem;
+                font-size: 2.3rem;
             }
             header p {
-                font-size: 1.2rem;
+                font-size: 1.05rem;
             }
             h2 {
-                font-size: 1.8rem;
+                font-size: 1.6rem;
             }
         }
     </style>
@@ -169,7 +199,7 @@
 
     <header>
         <h1>Konrad Serocki</h1>
-        <p>Data Science Portfolio</p>
+        <p>Portfolio</p>
     </header>
 
     <div class="container">
@@ -250,7 +280,6 @@
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
                         const el = entry.target;
-                        // Ustawienie szerokości na podstawie atrybutu data-level
                         el.style.width = el.dataset.level;
                         observer.unobserve(el);
                     }
