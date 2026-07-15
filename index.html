@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Konrad Serocki | Portfolio</title>
+
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+
+:root{
+    --bg:#0b1120;
+    --bg-secondary:#111827;
+    --card:rgba(255,255,255,.05);
+
+    --text:#ffffff;
+    --text-secondary:#94a3b8;
+
+    --blue:#3b82f6;
+    --purple:#8b5cf6;
+
+    --border:rgba(255,255,255,.08);
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:'Inter',sans-serif;
+    background:var(--bg);
+    color:var(--text);
+    overflow-x:hidden;
+}
+
+body::before{
+    content:"";
+    position:fixed;
+    inset:0;
+
+    background:
+    radial-gradient(circle at top left,#3b82f620,transparent 35%),
+    radial-gradient(circle at bottom right,#8b5cf620,transparent 35%);
+
+    z-index:-1;
+}
+
+.container{
+    width:min(1200px,90%);
+    margin:auto;
+}
+
+/* HERO */
+
+.hero{
+
+    min-height:100vh;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    text-align:center;
+}
+
+.hero h1{
+
+    font-size:clamp(3rem,8vw,6rem);
+    font-weight:800;
+
+    line-height:1;
+}
+
+.gradient{
+
+    background:linear-gradient(
+    90deg,
+    #60a5fa,
+    #8b5cf6
+    );
+
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+}
+
+.subtitle{
+
+    max-width:750px;
+
+    margin:30px auto;
+
+    color:var(--text-secondary);
+
+    font-size:1.3rem;
+}
+
+.hero-buttons{
+
+    margin-top:40px;
+}
+
+.btn{
+
+    display:inline-block;
+
+    padding:14px 24px;
+
+    border-radius:12px;
+
+    text-decoration:none;
+
+    font-weight:600;
+
+    margin:8px;
+
+    transition:all .3s ease;
+}
+
+.btn-primary{
+
+    background:linear-gradient(
+    135deg,
+    var(--blue),
+    var(--purple)
+    );
+
+    color:white;
+}
+
+.btn-secondary{
+
+    border:1px solid var(--border);
+
+    background:rgba(255,255,255,.05);
+
+    color:white;
+}
+
+.btn:hover{
+    transform:translateY(-4px);
+
+    box-shadow:
+        0 15px 35px rgba(59,130,246,.25);
+}
+
+/* SECTIONS */
+
+section{
+
+    padding:120px 0;
+}
+
+.section-title{
+
+    font-size:2.5rem;
+
+    margin-bottom:20px;
+}
+
+.section-text{
+
+    color:var(--text-secondary);
+
+    max-width:750px;
+
+    font-size:1.1rem;
+}
+
+/* GRID */
+
+.grid{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(300px,1fr));
+
+    gap:25px;
+
+    margin-top:60px;
+}
+
+.card{
+
+    padding:30px;
+
+    border:1px solid var(--border);
+
+    background:var(--card);
+
+    backdrop-filter:blur(15px);
+
+    border-radius:24px;
+
+    transition:.3s;
+}
+
+.card:hover{
+
+    transform:translateY(-8px);
+
+    border-color:#3b82f650;
+}
+
+.card h3{
+
+    margin-bottom:15px;
+}
+
+.card p{
+
+    color:var(--text-secondary);
+}
+
+/* TECH TAGS */
+
+.tech-stack{
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    gap:12px;
+
+    margin-top:40px;
+}
+
+.tech{
+
+    padding:10px 18px;
+
+    border-radius:999px;
+
+    background:rgba(255,255,255,.05);
+
+    border:1px solid var(--border);
+
+    color:#dbeafe;
+}
+
+/* PROJECTS */
+
+.project{
+
+    background:var(--card);
+
+    border:1px solid var(--border);
+
+    border-radius:24px;
+
+    padding:30px;
+
+    transition:.3s;
+}
+
+.project:hover{
+
+    transform:translateY(-8px);
+}
+
+.project h3{
+
+    margin-bottom:15px;
+}
+
+.project p{
+
+    color:var(--text-secondary);
+
+    margin-bottom:20px;
+}
+
+.project a{
+
+    color:#60a5fa;
+
+    text-decoration:none;
+
+    font-weight:600;
+}
+
+/* FOOTER */
+
+footer{
+
+    text-align:center;
+
+    padding:60px 0;
+
+    color:var(--text-secondary);
+}
+
+@media(max-width:768px){
+
+.section-title{
+
+    font-size:2rem;
+}
+
+.subtitle{
+
+    font-size:1.1rem;
+}
+
+}
+
+</style>
+</head>
+<body>
+
+<section class="hero">
+
+<div class="container">
+
+<h1>
+Konrad <span class="gradient">Serocki</span>
+</h1>
+
+
+<p class="subtitle">
+
+Data Analyst • Machine Learning Enthusiast • Power Platform Developer
+
+<br><br>
+
+Building business applications, automation solutions and data-driven products using Microsoft technologies, data science and modern development practices.
+
+</p>
+
+<div class="hero-buttons">
+
+    <a
+        class="btn btn-primary"
+        href="https://github.com/knrd23"
+        target="_blank"
+        rel="noopener noreferrer"
+    >
+        🚀 GitHub
+    </a>
+
+    <a
+        class="btn btn-secondary"
+        href="https://www.linkedin.com/in/konrad-serocki-132b66321/"
+        target="_blank"
+        rel="noopener noreferrer"
+    >
+        💼 LinkedIn
+    </a>
+
+</div>
+
+</div>
+
+</section>
+
+<section>
+
+<div class="container">
+
+<h2 class="section-title">
+About Me
+</h2>
+
+<p class="section-text">
+
+I hold a Bachelor of Science (B.Sc.) degree in Mathematical Modeling and Data Analysis from the University of Gdańsk.
+
+My academic background combines mathematics, probability theory, statistical inference, machine learning and data analysis with practical software development experience gained in the banking sector.
+
+Currently, I work at Nordea, where I develop business-critical applications and automation solutions supporting risk management and governance processes. My work focuses on Power Platform development, data-driven decision making and process optimization.
+
+</p>
+
+</div>
+
+</section>
+
+<section>
+
+<div class="container">
+
+<h2 class="section-title">
+What I Do
+</h2>
+
+<div class="grid">
+
+    <div class="card">
+        <h3>⚡ Power Platform</h3>
+        <p>
+            Building business applications using Power Apps, SharePoint, Dataverse and Microsoft 365 technologies.
+        </p>
+    </div>
+
+    <div class="card">
+        <h3>🤖 Machine Learning</h3>
+        <p>
+            Designing and evaluating machine learning models, including classification, regression and predictive analytics solutions.
+        </p>
+    </div>
+
+    <div class="card">
+        <h3>🧠 Neural Networks</h3>
+        <p>
+            Experience with deep learning and neural networks using PyTorch, including MLP architectures and model optimization.
+        </p>
+    </div>
+
+    <div class="card">
+        <h3>📈 Statistics & Probability</h3>
+        <p>
+            Strong background in mathematical statistics, statistical inference, probability theory, hypothesis testing and predictive modeling.
+        </p>
+    </div>
+
+</div>
+
+</div>
+
+</section>
+
+<section>
+
+<div class="container">
+
+<h2 class="section-title">
+Experience
+</h2>
+
+<div class="card">
+
+<h3>Nordea</h3>
+
+<p>
+
+Developing and maintaining internal business applications supporting operational risk and governance processes.
+
+Working with:
+
+Power Apps,
+Power Automate,
+SharePoint Online,
+Power BI,
+Microsoft 365,
+SQL,
+Data Analysis,
+Process Automation.
+
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<section>
+
+<div class="container">
+
+<h2 class="section-title">
+Projects
+</h2>
+
+<div class="grid">
+
+<div class="project">
+
+<h3>
+Credit Card Fraud Detection
+</h3>
+
+<p>
+
+Machine Learning project for detecting fraudulent transactions in highly imbalanced datasets. Achieved F1-score of 0.824 using a tuned Multi-Layer Perceptron model.
+
+</p>
+
+<a href="https://github.com/knrd23/portfolio/blob/data-science/credit_card_fraud_detection.ipynb"
+target="_blank">
+View Project →
+</a>
+
+</div>
+
+<div class="project">
+
+<h3>
+PLS vs Logistic Regression
+</h3>
+
+<p>
+
+Comparative statistical analysis of DNA data using Partial Least Squares and Logistic Regression models together with advanced bootstrap validation techniques.
+
+</p>
+
+<a href="https://github.com/knrd23/portfolio/blob/data-science/DNA_PLS_vs_LogReg.R"
+target="_blank">
+View Project →
+</a>
+
+</div>
+
+<div class="project">
+
+<h3>
+Data Visualizations
+</h3>
+
+<p>
+
+Collection of Python-based visual analytics projects using Plotly, GeoPandas, Seaborn and Matplotlib.
+
+</p>
+
+<a href="https://github.com/knrd23/portfolio/tree/data-visualization"
+target="_blank">
+View Project →
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section>
+
+<div class="container">
+
+<h2 class="section-title">
+Technology Stack
+</h2>
+
+<div class="tech-stack">
+
+<span class="tech">Power Apps</span>
+<span class="tech">Power Automate</span>
+<span class="tech">SharePoint</span>
+<span class="tech">Microsoft 365</span>
+<span class="tech">Power BI</span>
+<span class="tech">SQL</span>
+
+<span class="tech">Python</span>
+<span class="tech">PyTorch</span>
+<span class="tech">Pandas</span>
+<span class="tech">NumPy</span>
+<span class="tech">scikit-learn</span>
+
+<span class="tech">Machine Learning</span>
+<span class="tech">Deep Learning</span>
+<span class="tech">Neural Networks</span>
+
+<span class="tech">Statistics</span>
+<span class="tech">Statistical Inference</span>
+<span class="tech">Probability Theory</span>
+<span class="tech">Hypothesis Testing</span>
+
+<span class="tech">R</span>
+<span class="tech">Predictive Modeling</span>
+<span class="tech">Data Mining</span>
+
+</div>
+
+</div>
+
+</section>
+
+<section>
+
+<div class="container">
+
+<h2 class="section-title">
+Contact
+</h2>
+
+<p class="section-text">
+
+📧 serockikonrad@gmail.com
+
+<br><br>
+
+💼
+<a
+href="https://www.linkedin.com/in/konrad-serocki-132b66321/"
+target="_blank"
+style="color:#60a5fa;text-decoration:none;"
+>
+LinkedIn Profile
+</a>
+
+<br><br>
+
+🚀 Open to opportunities in Data Analytics, Data Science
+
+</p>
+
+</div>
+
+</section>
+
+<footer>
+
+2026 Konrad Serocki
+
+</footer>
+
+</body>
+</html>
